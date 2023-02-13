@@ -3,7 +3,7 @@
 
 # In this example: A Huggingface GPTJ model
 
-from transformers import GPTJForCausalLM, GPT2Tokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 def download_model():

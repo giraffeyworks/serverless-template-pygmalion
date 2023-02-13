@@ -1,4 +1,4 @@
-from transformers import GPTJForCausalLM, GPT2Tokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"

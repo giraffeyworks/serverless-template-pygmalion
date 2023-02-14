@@ -30,14 +30,15 @@ def inference(model_inputs:dict) -> dict:
 
     # Parse out your arguments
     prompt = model_inputs.get('prompt', None)
+    max_new = model_inputs.get('max_new_tokens', 10)
     if prompt == None:
         return {'message': "No prompt provided"}
     
     # Tokenize inputs
     input_tokens = tokenizer.encode(prompt, return_tensors="pt").to(device)
 
-    # Run the model
-    output = model.generate(input_tokens)
+    # Run the model, and set `pad_token_id` to `eos_token_id`:50256 for open-end generation
+    output = model.generate(input_tokens, max_new_tokens=max_new, pad_token_id=50256)
 
     # Decode output tokens
     output_text = tokenizer.batch_decode(output, skip_special_tokens = True)[0]

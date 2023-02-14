@@ -10,7 +10,7 @@ def init():
     global tokenizer
 
     print("loading to CPU...")
-    model = AutoModelForCausalLM.from_pretrained("PygmalionAI/pygmalion-6b")
+    model = AutoModelForCausalLM.from_pretrained("ayylamo/pygmalion-6b")
     print("done")
 
     # conditionally load to GPU
@@ -19,7 +19,7 @@ def init():
         model.cuda()
         print("done")
 
-    tokenizer = AutoTokenizer.from_pretrained("PygmalionAI/pygmalion-6b")
+    tokenizer = AutoTokenizer.from_pretrained("ayylamo/pygmalion-6b")
 
 
 # Inference is ran for every server call

@@ -9,11 +9,11 @@ import torch
 def download_model():
     # do a dry run of loading the huggingface model, which will download weights
     print("downloading model...")
-    AutoModelForCausalLM.from_pretrained("Pygmalion/pygmalion-350m")
+    AutoModelForCausalLM.from_pretrained("PygmalionAI/pygmalion-350m")
     print("done")
 
     print("downloading tokenizer...")
-    tokenizer = AutoTokenizer.from_pretrained("Pygmalion/pygmalion-350m")
+    tokenizer = AutoTokenizer.from_pretrained("PygmalionAI/pygmalion-350m")
     print("done")
 
 if __name__ == "__main__":
